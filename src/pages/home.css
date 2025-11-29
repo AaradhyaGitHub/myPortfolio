@@ -3,6 +3,7 @@
 .home {
   min-height: calc(100vh - var(--nav-height));
   position: relative;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Toggle Button */
@@ -131,6 +132,8 @@
   margin: 0 auto;
   padding: 0 var(--gap-sm);
   animation: fadeInUp 0.6s ease;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden;
 }
 
 @keyframes fadeIn {
@@ -429,6 +432,30 @@
   }
   50% {
     transform: translateY(6px);
+  }
+}
+
+/* ========== MOBILE SCROLL FIX ========== */
+@media (max-width: 767px) {
+  /* Create scrollable gutters around interactive elements */
+  .featured-projects {
+    padding: 0 4px;
+    touch-action: pan-y;
+  }
+  
+  .featured-projects-container {
+    touch-action: pan-y;
+  }
+  
+  /* Allow vertical scrolling on card containers */
+  .featured-project-card {
+    touch-action: pan-y;
+    margin-bottom: 20px;
+  }
+  
+  /* Last card extra bottom margin for comfortable scrolling */
+  .featured-project-card:last-child {
+    margin-bottom: 32px;
   }
 }
 
