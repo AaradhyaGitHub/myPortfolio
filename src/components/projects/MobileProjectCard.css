@@ -1,0 +1,666 @@
+/* ========== MOBILE PROJECT CARD - iPhone Mockup ========== */
+
+/* Wrapper with padding */
+.mpc-card-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--gap-md);
+  perspective: 1200px;
+}
+
+/* Phone Container - handles flip */
+.mpc-phone-container {
+  position: relative;
+  width: 280px;
+  height: 580px;
+  transform-style: preserve-3d;
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mpc-phone-container.mpc-flipped {
+  transform: rotateY(180deg);
+}
+
+/* Phone Faces */
+.mpc-phone-face {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  pointer-events: none;
+}
+
+.mpc-phone-back {
+  transform: rotateY(180deg);
+}
+
+/* Fix: Enable pointer events on visible face only */
+.mpc-phone-container:not(.mpc-flipped) .mpc-phone-face:not(.mpc-phone-back) {
+  pointer-events: auto;
+}
+
+.mpc-phone-container.mpc-flipped .mpc-phone-back {
+  pointer-events: auto;
+}
+
+/* Phone Frame - The actual device */
+.mpc-phone-frame {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(145deg, #1c1c1e 0%, #2c2c2e 50%, #1c1c1e 100%);
+  border-radius: 44px;
+  padding: 12px;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1),
+    0 25px 50px -12px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Inner screen area */
+.mpc-phone-frame::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  background: #000;
+  border-radius: 36px;
+  z-index: 0;
+}
+
+/* Dynamic Island */
+.mpc-dynamic-island {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 28px;
+  background: #000;
+  border-radius: 20px;
+  z-index: 10;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.8);
+}
+
+/* Status Bar */
+.mpc-status-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 54px 24px 8px 24px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  position: relative;
+  z-index: 5;
+}
+
+.mpc-time {
+  font-weight: 600;
+  letter-spacing: -0.3px;
+}
+
+.mpc-status-icons {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.mpc-status-icons svg {
+  opacity: 0.9;
+}
+
+/* Tab Navigation */
+.mpc-tab-nav {
+  display: flex;
+  gap: 4px;
+  padding: 0 16px;
+  margin-bottom: 8px;
+  position: relative;
+  z-index: 5;
+}
+
+.mpc-tab-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  border-radius: 10px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mpc-tab-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.mpc-tab-btn.mpc-active-tab {
+  background: var(--accent);
+  color: #fff;
+}
+
+.mpc-tab-btn svg {
+  flex-shrink: 0;
+}
+
+/* Content Area */
+.mpc-content-area {
+  flex: 1;
+  overflow-y: auto;
+  position: relative;
+  z-index: 5;
+  margin: 0 4px;
+  border-radius: 16px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.mpc-content-area::-webkit-scrollbar {
+  display: none;
+}
+
+/* Tab Content */
+.mpc-tab-content {
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* App Header */
+.mpc-app-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mpc-app-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 14px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.mpc-app-icon-placeholder {
+  width: 60px;
+  height: 60px;
+  border-radius: 14px;
+  background: linear-gradient(
+    135deg,
+    var(--accent) 0%,
+    var(--accent-hover) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.mpc-app-header-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.mpc-app-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 4px 0;
+  letter-spacing: -0.4px;
+}
+
+.mpc-app-tagline {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+  line-height: 1.3;
+}
+
+/* Sections */
+.mpc-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mpc-section-title {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0;
+}
+
+.mpc-section-text {
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+}
+
+/* Quick Links */
+.mpc-quick-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mpc-quick-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.mpc-quick-link:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateX(2px);
+}
+
+.mpc-quick-link svg:first-child {
+  color: var(--accent);
+}
+
+.mpc-quick-link span {
+  flex: 1;
+}
+
+.mpc-chevron {
+  opacity: 0.4;
+}
+
+/* Tech Grid */
+.mpc-tech-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.mpc-tech-pill {
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* How It Works */
+.mpc-how-it-works-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mpc-how-it-works-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.mpc-step-number {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.mpc-step-text {
+  font-size: 13px;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  padding-top: 2px;
+}
+
+/* Features List */
+.mpc-features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mpc-feature-item {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.mpc-feature-bullet {
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+  background: var(--accent-muted);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.mpc-feature-text {
+  font-size: 13px;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+}
+
+/* Different List */
+.mpc-different-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mpc-different-item {
+  font-size: 13px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0;
+  padding-left: 12px;
+  border-left: 2px solid var(--accent);
+}
+
+/* Demo Button Container */
+.mpc-demo-button-container {
+  padding: 12px 16px;
+  position: relative;
+  z-index: 5;
+}
+
+.mpc-demo-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 20px;
+  background: var(--accent);
+  border: none;
+  border-radius: 14px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.mpc-demo-button:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+.mpc-demo-button:active {
+  transform: translateY(0);
+}
+
+/* Home Indicator */
+.mpc-home-indicator {
+  width: 134px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+  margin: 8px auto 6px;
+  position: relative;
+  z-index: 5;
+}
+
+/* ========== BACK OF PHONE (Demo) ========== */
+
+.mpc-back-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px 12px;
+  position: relative;
+  z-index: 5;
+}
+
+.mpc-back-button {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 10px;
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mpc-back-button:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.mpc-back-title {
+  font-size: 17px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.mpc-back-spacer {
+  width: 70px;
+}
+
+/* Video Container */
+.mpc-video-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+  position: relative;
+  z-index: 5;
+}
+
+.mpc-video-wrapper {
+  width: 100%;
+  aspect-ratio: 9/16;
+  max-height: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.mpc-video-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.mpc-no-video {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.mpc-no-video p {
+  margin: 0;
+  font-size: 14px;
+}
+
+/* Video Info */
+.mpc-video-info {
+  padding: 16px;
+  text-align: center;
+  position: relative;
+  z-index: 5;
+}
+
+.mpc-video-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 4px 0;
+}
+
+.mpc-video-subtitle {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0;
+}
+
+/* ========== RESPONSIVE ========== */
+
+/* Larger phones */
+@media (min-width: 400px) {
+  .mpc-phone-container {
+    width: 300px;
+    height: 620px;
+  }
+
+  .mpc-phone-frame {
+    border-radius: 48px;
+  }
+
+  .mpc-tab-btn {
+    padding: 12px 10px;
+    font-size: 13px;
+  }
+}
+
+/* Tablets - phones side by side */
+@media (min-width: 768px) {
+  .mpc-card-wrapper {
+    padding: var(--gap-lg);
+  }
+
+  .mpc-phone-container {
+    width: 320px;
+    height: 660px;
+  }
+
+  .mpc-phone-frame {
+    border-radius: 52px;
+    padding: 14px;
+  }
+
+  .mpc-dynamic-island {
+    width: 110px;
+    height: 32px;
+  }
+
+  .mpc-status-bar {
+    padding: 58px 28px 10px 28px;
+    font-size: 15px;
+  }
+
+  .mpc-tab-btn {
+    padding: 12px 12px;
+    font-size: 13px;
+    gap: 8px;
+  }
+
+  .mpc-app-title {
+    font-size: 22px;
+  }
+
+  .mpc-app-icon,
+  .mpc-app-icon-placeholder {
+    width: 68px;
+    height: 68px;
+  }
+
+  .mpc-section-text {
+    font-size: 15px;
+  }
+
+  .mpc-demo-button {
+    padding: 16px 24px;
+    font-size: 16px;
+  }
+}
+
+/* Desktop - larger phones */
+@media (min-width: 1024px) {
+  .mpc-phone-container {
+    width: 340px;
+    height: 700px;
+  }
+
+  .mpc-phone-frame {
+    border-radius: 54px;
+    padding: 16px;
+  }
+
+  .mpc-content-area {
+    margin: 0 6px;
+  }
+
+  .mpc-tab-content {
+    padding: 20px 14px;
+    gap: 24px;
+  }
+
+  .mpc-app-icon,
+  .mpc-app-icon-placeholder {
+    width: 72px;
+    height: 72px;
+  }
+
+  .mpc-app-title {
+    font-size: 24px;
+  }
+
+  .mpc-app-tagline {
+    font-size: 14px;
+  }
+}
+
+/* Large desktop */
+@media (min-width: 1200px) {
+  .mpc-phone-container {
+    width: 360px;
+    height: 740px;
+  }
+}

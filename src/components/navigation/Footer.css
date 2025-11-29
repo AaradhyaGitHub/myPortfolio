@@ -1,0 +1,45 @@
+/* Footer - Simple & Clean */
+
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 24px 0;
+  margin-top: auto;
+  background: var(--bg-primary);
+  transition: background var(--transition-normal), border-color var(--transition-normal);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-copyright {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.footer-links {
+  display: flex;
+  gap: 24px;
+}
+
+.footer-links a {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.footer-links a:hover {
+  color: var(--accent);
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+}

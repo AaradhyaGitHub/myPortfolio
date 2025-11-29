@@ -1,0 +1,332 @@
+/* ========== PROJECTS PAGE - Mobile First ========== */
+
+.projects-page {
+  min-height: calc(100vh - var(--nav-height));
+}
+
+/* ========== PAGE HEADER ========== */
+.projects-page-header {
+  text-align: center;
+  padding: var(--gap-lg) var(--gap-md);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.projects-page-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 12px 0;
+  letter-spacing: -0.02em;
+}
+
+.projects-page-subtitle {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ========== SECTIONS ========== */
+.projects-section {
+  padding: 0 var(--gap-sm);
+  margin-bottom: var(--gap-xl);
+}
+
+.projects-section-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: var(--gap-lg);
+  padding: 0 var(--gap-sm);
+}
+
+.projects-section-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: var(--accent-muted);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.projects-section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 4px 0;
+  letter-spacing: -0.01em;
+}
+
+.projects-section-subtitle {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* ========== SECTION DIVIDER ========== */
+.projects-section-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: var(--gap-lg) var(--gap-md);
+  margin: var(--gap-md) 0;
+}
+
+.projects-divider-line {
+  height: 1px;
+  width: 60px;
+  background: var(--border);
+}
+
+.projects-divider-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+/* ========== MOBILE GRID ========== */
+.projects-mobile-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  gap: var(--gap-xl);
+}
+
+.projects-mobile-card-wrapper {
+  width: 100%;
+  max-width: 400px;
+}
+
+/* ========== WEB GRID ========== */
+.projects-web-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  gap: var(--gap-lg);
+}
+
+.projects-web-card-wrapper {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* ========== LOADING ANIMATION ========== */
+.projects-loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  padding: var(--gap-lg);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+
+.projects-loading-video {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  border-radius: var(--radius-md);
+  margin-bottom: var(--gap-md);
+}
+
+.projects-loading-text {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--gap-sm);
+  font-family: "Courier New", monospace;
+}
+
+.projects-loading-bar {
+  width: 200px;
+  height: 4px;
+  background: var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.projects-loading-progress {
+  height: 100%;
+  width: 0%;
+  background: var(--accent);
+  animation: projects-loading-fill linear forwards;
+}
+
+@keyframes projects-loading-fill {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* ========== FOOTER SPACER ========== */
+.projects-footer-spacer {
+  height: var(--gap-xl);
+}
+
+/* ========== RESPONSIVE - Tablet ========== */
+@media (min-width: 640px) {
+  .projects-section {
+    padding: 0 var(--gap-md);
+  }
+
+  .projects-section-header {
+    padding: 0;
+  }
+
+  .projects-page-header {
+    padding: var(--gap-xl) var(--gap-md);
+  }
+
+  .projects-page-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .projects-mobile-card-wrapper {
+    max-width: none;
+  }
+}
+
+/* ========== RESPONSIVE - Desktop ========== */
+@media (min-width: 768px) {
+  .projects-page {
+    padding-top: 0;
+  }
+
+  .projects-section {
+    padding: 0 var(--gap-lg);
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .projects-section-title {
+    font-size: 1.75rem;
+  }
+
+  .projects-section-icon {
+    width: 56px;
+    height: 56px;
+  }
+
+  /* Mobile apps - 2 per row on desktop */
+  .projects-mobile-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--gap-lg);
+  }
+
+  .projects-mobile-card-wrapper {
+    max-width: none;
+  }
+
+  /* Web projects - 2 per row on desktop */
+  .projects-web-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--gap-xl);
+  }
+
+  .projects-web-card-wrapper {
+    max-width: none;
+  }
+
+  .projects-loading-container {
+    min-height: 380px;
+  }
+
+  .projects-loading-video {
+    max-width: 350px;
+  }
+}
+
+/* ========== RESPONSIVE - Large Desktop ========== */
+@media (min-width: 1024px) {
+  .projects-section {
+    padding: 0 var(--gap-xl);
+  }
+
+  .projects-page-header {
+    padding: var(--gap-xl) var(--gap-lg) var(--gap-lg);
+  }
+
+  .projects-section-divider {
+    margin: var(--gap-lg) 0;
+  }
+
+  .projects-divider-line {
+    width: 100px;
+  }
+
+  .projects-loading-container {
+    min-height: 420px;
+  }
+
+  .projects-loading-video {
+    max-width: 400px;
+  }
+
+  .projects-loading-bar {
+    width: 280px;
+  }
+}
+
+/* ========== RESPONSIVE - Extra Large ========== */
+@media (min-width: 1200px) {
+  .projects-section {
+    max-width: 1600px;
+  }
+
+  .projects-mobile-grid {
+    gap: var(--gap-xl);
+  }
+
+  .projects-web-grid {
+    gap: var(--gap-xl);
+  }
+}
+
+/* ========== SCROLL ANCHOR OFFSET ========== */
+/* Account for fixed navbar when scrolling to anchors */
+[id] {
+  scroll-margin-top: calc(var(--nav-height) + var(--gap-md));
+}
+
+/* ========== ANIMATION ON SCROLL ========== */
+@keyframes projects-fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.projects-mobile-card-wrapper,
+.projects-web-card-wrapper {
+  animation: projects-fade-in-up 0.5s ease-out;
+}
+
+/* Stagger animation delay for cards */
+.projects-mobile-card-wrapper:nth-child(1) { animation-delay: 0s; }
+.projects-mobile-card-wrapper:nth-child(2) { animation-delay: 0.1s; }
+.projects-mobile-card-wrapper:nth-child(3) { animation-delay: 0.2s; }
+
+/* ========== DARK/LIGHT THEME ADJUSTMENTS ========== */
+[data-theme="light"] .projects-loading-container {
+  background: var(--bg);
+  border-color: var(--border);
+}
+
+[data-theme="light"] .projects-loading-text {
+  color: var(--text-secondary);
+}

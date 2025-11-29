@@ -1,0 +1,430 @@
+/* ========== FEATURED PROJECTS SECTION ========== */
+.featured-projects {
+  padding-bottom: var(--gap-lg);
+}
+
+.featured-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--gap-md);
+}
+
+.view-all-link {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.8rem;
+  color: var(--accent);
+  text-decoration: none;
+  transition: gap var(--transition-fast);
+}
+
+.view-all-link:hover {
+  gap: 8px;
+}
+
+/* ========== CARDS GRID ========== */
+.featured-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ========== FLIP CARD STRUCTURE ========== */
+.featured-card-wrapper {
+  perspective: 1000px;
+  height: 320px;
+}
+
+.featured-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.featured-card-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+/* ========== CARD FACES (SHARED) ========== */
+.card-face {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  overflow: hidden;
+}
+
+/* ========== FRONT OF CARD ========== */
+.card-front {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Image Section */
+.card-image-section {
+  position: relative;
+  height: 140px;
+  background: var(--bg);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.featured-card-wrapper:hover .card-image {
+  transform: scale(1.05);
+}
+
+.card-image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--accent-muted) 0%, var(--bg) 100%);
+  color: var(--accent);
+}
+
+/* Type Badge */
+.card-type-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--text-secondary);
+  backdrop-filter: blur(8px);
+}
+
+.card-type-badge svg {
+  color: var(--accent);
+}
+
+/* Content Section */
+.card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 8px;
+}
+
+.card-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--text);
+}
+
+.card-tagline {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.4;
+  flex-shrink: 0;
+}
+
+/* Tech Tags */
+.card-techs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.tech-tag {
+  padding: 0px 5px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* Action Buttons */
+.card-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  margin-top: 8px;
+}
+
+.card-links {
+  display: flex;
+  gap: 6px;
+}
+
+.card-link {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 10px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.card-link:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-muted);
+}
+
+.card-flip-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: var(--accent);
+  border: none;
+  border-radius: var(--radius-sm);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.card-flip-btn:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+/* ========== BACK OF CARD ========== */
+.card-back {
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-card);
+}
+
+.card-back-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+}
+
+.card-back-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 10px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  font-size: 0.7rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.card-back-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.card-back-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--accent);
+}
+
+/* Back Content */
+.card-back-content {
+  flex: 1;
+  padding: 14px 16px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.card-back-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--accent);
+}
+
+.section-header h4 {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.card-backstory {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.card-techs-back {
+  margin-top: 0;
+}
+
+.card-features {
+  margin: 0;
+  padding-left: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.card-features li {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.card-features li::marker {
+  color: var(--accent);
+}
+
+/* ========== RESPONSIVE ========== */
+
+/* Tablet+ : Horizontal card layout */
+@media (min-width: 640px) {
+  .featured-card-wrapper {
+    height: 220px;
+  }
+
+  .card-front {
+    flex-direction: row;
+  }
+
+  .card-image-section {
+    width: 200px;
+    height: 100%;
+    flex-shrink: 0;
+  }
+
+  .card-content {
+    padding: 20px;
+    gap: 6px;
+  }
+
+  .card-title {
+    font-size: 1.25rem;
+  }
+
+  .card-tagline {
+    font-size: 0.85rem;
+  }
+
+  .card-back-content {
+    flex-direction: row;
+    gap: 24px;
+    padding: 16px 20px;
+  }
+
+  .card-back-section {
+    flex: 1;
+  }
+
+  .card-back-section:first-child {
+    flex: 1.5;
+  }
+}
+
+/* Desktop: Larger cards */
+@media (min-width: 768px) {
+  .featured-grid {
+    gap: 24px;
+  }
+
+  .featured-card-wrapper {
+    height: 240px;
+  }
+
+  .card-image-section {
+    width: 240px;
+  }
+
+  .card-content {
+    padding: 24px;
+  }
+
+  .card-title {
+    font-size: 1.35rem;
+  }
+
+  .tech-tag {
+    font-size: 0.7rem;
+    padding: 4px 10px;
+  }
+
+  .card-link {
+    padding: 8px 12px;
+    font-size: 0.75rem;
+  }
+
+  .card-flip-btn {
+    padding: 8px 14px;
+    font-size: 0.75rem;
+  }
+
+  .card-backstory {
+    font-size: 0.85rem;
+  }
+
+  .card-features li {
+    font-size: 0.8rem;
+  }
+}
+
+/* Large desktop */
+@media (min-width: 900px) {
+  .featured-card-wrapper {
+    height: 260px;
+  }
+
+  .card-image-section {
+    width: 280px;
+  }
+}
