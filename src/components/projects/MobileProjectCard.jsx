@@ -304,11 +304,7 @@ export default function MobileProjectCard({
             </div>
 
             {/* Video Info */}
-            <div className="mpc-video-info">
-              <h4 className="mpc-video-title">{title} Demo</h4>
-              <p className="mpc-video-subtitle">See the app in action</p>
-            </div>
-
+        
             {/* Home Indicator */}
             <div className="mpc-home-indicator"></div>
           </div>

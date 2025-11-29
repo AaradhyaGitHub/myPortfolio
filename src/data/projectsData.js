@@ -216,7 +216,7 @@ export const projects = [
     links: {
       live: "https://github.com",
       github: "https://github.com/AaradhyaGitHub",
-      demo: "https://drive.google.com/file/d/1SyHDbU0gORJ_OLzXiPDZkS9B9AASxK6d/view?usp=sharing"
+      demo: "https://res.cloudinary.com/de3cxnkuw/video/upload/v1764451764/PickZickleDemo_1_1_1_csushr.mp4"
     }
   },
   {
