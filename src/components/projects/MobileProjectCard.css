@@ -172,8 +172,8 @@
   align-items: center;
   justify-content: center;
   gap: 6px;
-  padding: 6px 8px;
-  background: rgba(255, 255, 255, 0.08); /* rgba(255, 255, 255, 0.08);*/
+  padding: 8px 8px;
+  background:  rgba(255, 255, 255, 0.08);/* rgba(255, 255, 255, 0.08);*/
   border: none;
   border-radius: 10px;
   color: rgba(255, 255, 255, 0.6);
@@ -495,8 +495,9 @@
 .mpc-back-button {
   display: flex;
   align-items: center;
-  gap: 1px;
-  padding: 6px 0px 0px 0px;
+  gap: 4px;
+  padding: 8px 5px;
+  background: rgba(255, 255, 255, 0);
   border: none;
   border-radius: 10px;
   color: var(--accent);
@@ -511,7 +512,7 @@
 }
 
 .mpc-back-title {
-  font-size: 25px;
+  font-size: 15px;
   font-weight: 600;
   color: #fff;
   margin: 0;
@@ -526,25 +527,22 @@
 
 /* Video Container */
 .mpc-video-container {
-  flex: 0.8;
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0 16px;
   position: relative;
   z-index: 5;
-  border-radius: 20px;
-  padding: 0px;
 }
 
 .mpc-video-wrapper {
-  min-width: 256px;
-  aspect-ratio: 9/17;
+  width: 100%;
+  aspect-ratio: 9/16;
   max-height: 100%;
+  border-radius: 12px;
   overflow: hidden;
-  border-bottom-left-radius: 50px;
-  border-bottom-right-radius: 50px;
-  top: 10px;
-
+  background: #000;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
@@ -573,7 +571,6 @@
 /* Video Info */
 .mpc-video-info {
   padding: 16px;
-
   text-align: center;
   position: relative;
   z-index: 5;
@@ -583,7 +580,6 @@
   font-size: 16px;
   font-weight: 600;
   color: #fff;
-  
   margin: 0 0 4px 0;
 }
 

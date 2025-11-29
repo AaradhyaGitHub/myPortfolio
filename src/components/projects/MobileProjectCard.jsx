@@ -304,7 +304,7 @@ export default function MobileProjectCard({
             </div>
 
             {/* Video Info */}
-        
+
             {/* Home Indicator */}
             <div className="mpc-home-indicator"></div>
           </div>
