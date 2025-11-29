@@ -1,4 +1,5 @@
 import "./About.css";
+import { Link } from "react-router-dom";
 
 export default function About() {
   return (
@@ -192,13 +193,7 @@ export default function About() {
               <span className="outside-icon">●</span>
               <div className="outside-content">
                 <span className="outside-title">
-                  <a
-                    href="https://placeholder-photography-link.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Aerial Photography
-                  </a>
+                  <Link to="/photography/aerial">Aerial Photography</Link>
                 </span>
                 <span className="outside-detail">
                   Drones, cinematography, and creative tech

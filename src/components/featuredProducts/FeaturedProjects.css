@@ -152,11 +152,11 @@
 .card-techs {
   display: flex;
   flex-wrap: wrap;
-  gap: 4px;
+  gap: 5px;
 }
 
 .tech-tag {
-  padding: 0px 5px;
+  padding: 3px 5px;
   background: var(--bg);
   border: 1px solid var(--border);
   border-radius: 15px;
@@ -170,9 +170,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 12px;
+  padding-top: 7px;
   border-top: 1px solid var(--border);
-  margin-top: 8px;
+  margin-top: 0px;
 }
 
 .card-links {
@@ -204,8 +204,8 @@
 .card-flip-btn {
   display: flex;
   align-items: center;
-  gap: 6px;
-  padding: 6px 12px;
+  gap: 1px;
+  padding: 6px 6px;
   background: var(--accent);
   border: none;
   border-radius: var(--radius-sm);

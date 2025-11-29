@@ -1,6 +1,6 @@
 .photography-page {
   min-height: calc(100vh - var(--nav-height));
-  padding-top: var(--nav-height);
+  padding-top: 20px;
   background: var(--bg);
 }
 

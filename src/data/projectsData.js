@@ -52,7 +52,7 @@ export const projects = [
       live: "https://github.com/AaradhyaGitHub/AaradhyaGitHub/blob/main/FlowBook-About.md",
       github:
         "https://github.com/AaradhyaGitHub/AaradhyaGitHub/blob/main/FlowBook-About.md",
-      demo: "https://res.cloudinary.com/de3cxnkuw/video/upload/v1764212185/Flowbook-v3.75-demo_lglnht.mp4"
+      demo: "https://res.cloudinary.com/de3cxnkuw/video/upload/v1764224702/FlowBook-v4-demo_xjcbnw.mp4"
     }
   },
   {
@@ -226,8 +226,7 @@ export const projects = [
     projectType: "web",
     highlight: false,
     image: null,
-    description:
-      "COMING SOON",
+    description: "COMING SOON",
     technologies: {
       frontend: ["React.js", "HTML/CSS/JS"],
       routing: ["React Router"],

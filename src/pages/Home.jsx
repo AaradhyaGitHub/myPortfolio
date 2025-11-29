@@ -168,7 +168,7 @@ export default function Home() {
 
                 <p className="hero-bio">
                   I build things for the web and mobile. Passionate about
-                  turning data into ideas and applications.
+                  turning data into applications.
                 </p>
 
                 {/* Social Links */}
@@ -264,7 +264,7 @@ export default function Home() {
                 </p>
                 <p>
                   <a
-                    href="https://res.cloudinary.com/de3cxnkuw/video/upload/v1764212185/Flowbook-v3.75-demo_lglnht.mp4"
+                    href="https://res.cloudinary.com/de3cxnkuw/video/upload/v1764224702/FlowBook-v4-demo_xjcbnw.mp4"
                     target="_blank"
                     rel="noopener noreferrer"
                   >

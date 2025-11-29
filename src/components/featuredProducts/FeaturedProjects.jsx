@@ -171,7 +171,7 @@ export default function FeaturedProjects() {
                         aria-label="View more details"
                       >
                         <span>Details</span>
-                        <RotateCcw size={14} />
+                        <RotateCcw size={12} />
                       </button>
                     </div>
                   </div>
