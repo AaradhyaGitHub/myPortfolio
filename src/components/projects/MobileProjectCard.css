@@ -173,7 +173,7 @@
   justify-content: center;
   gap: 6px;
   padding: 6px 8px;
-  background:  rgba(255, 255, 255, 0.08);/* rgba(255, 255, 255, 0.08);*/
+  background: rgba(255, 255, 255, 0.08); /* rgba(255, 255, 255, 0.08);*/
   border: none;
   border-radius: 10px;
   color: rgba(255, 255, 255, 0.6);
@@ -538,7 +538,7 @@
 }
 
 .mpc-video-wrapper {
-  width: 100%;
+  min-width: 256px;
   aspect-ratio: 9/16;
   max-height: 100%;
   overflow: hidden;
@@ -561,7 +561,6 @@
   justify-content: center;
   gap: 12px;
   color: rgba(255, 255, 255, 0.4);
-  
 }
 
 .mpc-no-video p {
