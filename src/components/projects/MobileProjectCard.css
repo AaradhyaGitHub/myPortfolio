@@ -526,7 +526,7 @@
 
 /* Video Container */
 .mpc-video-container {
-  flex: 1;
+  flex: 0.8;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -571,6 +571,7 @@
 /* Video Info */
 .mpc-video-info {
   padding: 16px;
+
   text-align: center;
   position: relative;
   z-index: 5;
@@ -580,6 +581,7 @@
   font-size: 16px;
   font-weight: 600;
   color: #fff;
+  
   margin: 0 0 4px 0;
 }
 
