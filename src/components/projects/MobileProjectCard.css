@@ -7,6 +7,7 @@
   align-items: center;
   padding: var(--gap-md);
   perspective: 1200px;
+  -webkit-perspective: 1200px;
 }
 
 /* Phone Container - handles flip */
@@ -15,11 +16,15 @@
   width: 280px;
   height: 580px;
   transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
   transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
 }
 
 .mpc-phone-container.mpc-flipped {
-  transform: rotateY(180deg);
+  transform: rotateY(180deg) translateZ(0);
+  -webkit-transform: rotateY(180deg) translateZ(0);
 }
 
 /* Phone Faces */
@@ -31,20 +36,52 @@
   height: 100%;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-  pointer-events: none;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  transition: opacity 0.1s ease;
 }
 
+/* Front face */
+.mpc-phone-face:not(.mpc-phone-back) {
+  transform: rotateY(0deg) translateZ(1px);
+  -webkit-transform: rotateY(0deg) translateZ(1px);
+  z-index: 2;
+}
+
+/* Back face */
 .mpc-phone-back {
-  transform: rotateY(180deg);
+  transform: rotateY(180deg) translateZ(1px);
+  -webkit-transform: rotateY(180deg) translateZ(1px);
+  z-index: 1;
 }
 
-/* Fix: Enable pointer events on visible face only */
+/* Explicit visibility control - NOT flipped (front visible) */
 .mpc-phone-container:not(.mpc-flipped) .mpc-phone-face:not(.mpc-phone-back) {
   pointer-events: auto;
+  opacity: 1;
+  visibility: visible;
+}
+
+.mpc-phone-container:not(.mpc-flipped) .mpc-phone-back {
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Explicit visibility control - FLIPPED (back visible) */
+.mpc-phone-container.mpc-flipped .mpc-phone-face:not(.mpc-phone-back) {
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
 }
 
 .mpc-phone-container.mpc-flipped .mpc-phone-back {
   pointer-events: auto;
+  opacity: 1;
+  visibility: visible;
+  z-index: 2;
 }
 
 /* Phone Frame - The actual device */
@@ -60,6 +97,8 @@
   flex-direction: column;
   position: relative;
   overflow: hidden;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
 }
 
 /* Inner screen area */
