@@ -50,15 +50,16 @@ const router = createBrowserRouter([
     path: "/",
     element: <RootLayout />,
     children: [
-      { index: true, element: <Home /> }, // Use index: true for the default child route
-      { path: "projects", element: <Projects /> }, // No leading slash
-      { path: "about", element: <About /> }, // No leading slash
-      { path: "contact", element: <Contact /> }, // No leading slash
-      { path: "photography/:genre", element: <Photography /> }, // No leading slash
+      { index: true, element: <Home /> },
+      { path: "home", element: <Navigate to="/" replace /> }, // ADD THIS
+      { path: "projects", element: <Projects /> },
+      { path: "about", element: <About /> },
+      { path: "contact", element: <Contact /> },
+      { path: "photography/:genre", element: <Photography /> },
       {
         path: "photography",
         element: <Navigate to="/photography/drone" replace />
-      } // No leading slash
+      }
     ]
   }
 ]);
