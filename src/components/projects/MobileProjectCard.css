@@ -538,14 +538,14 @@
   display: flex;
   align-items: center; /* Centers video vertically */
   justify-content: center; /* Centers video horizontally */
-  
+
   /* MODIFY: Adjust padding to control video position and size
      Format: padding: TOP RIGHT BOTTOM LEFT
      - Increase TOP to push video down
      - Increase BOTTOM to push video up
      - Increase LEFT/RIGHT to add side margins */
-  padding: 16px 20px 12px 20px;
-  
+  padding: 1px 20px 12px 20px;
+
   position: relative;
   z-index: 5;
 }
@@ -557,20 +557,20 @@
 .mpc-video-wrapper {
   /* MODIFY: Percentage of container width (90% = smaller video, 100% = full width) */
   width: 95%;
-  
+
   /* DO NOT CHANGE: Maintains Pixel 3 screen ratio (9:19.5) */
   aspect-ratio: 9 / 19.5;
-  
+
   /* Prevents video from overflowing container */
   max-height: 100%;
-  
+
   /* MODIFY: Border radius for rounded corners (higher = more rounded)
      Try: 16px, 20px, 24px */
   border-radius: 14px;
-  
+
   overflow: hidden;
   background: #000; /* Black background before video loads */
-  
+
   /* MODIFY: Shadow intensity and spread
      Format: horizontal vertical blur spread color */
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
@@ -609,7 +609,7 @@
   /* MODIFY: Spacing around text
      Format: padding: TOP/BOTTOM LEFT/RIGHT */
   padding: 14px 20px;
-  
+
   text-align: center;
   position: relative;
   z-index: 5;
@@ -618,10 +618,10 @@
 .mpc-video-title {
   /* MODIFY: Title font size (try 17px, 18px, 20px for larger) */
   font-size: 16px;
-  
+
   font-weight: 600;
   color: #fff;
-  
+
   /* MODIFY: Bottom margin to adjust spacing before subtitle */
   margin: 0 0 4px 0;
 }
@@ -629,10 +629,10 @@
 .mpc-video-subtitle {
   /* MODIFY: Subtitle font size (try 14px, 15px for larger) */
   font-size: 13px;
-  
+
   /* MODIFY: Text opacity (0.5 = dimmer, 0.8 = brighter) */
   color: rgba(255, 255, 255, 0.6);
-  
+
   margin: 0;
 }
 
@@ -666,7 +666,7 @@
   .mpc-video-wrapper {
     /* MODIFY: Video width percentage */
     width: 95%;
-    
+
     /* MODIFY: Border radius */
     border-radius: 15px;
   }
@@ -746,10 +746,10 @@
   .mpc-video-wrapper {
     /* MODIFY: Video width percentage */
     width: 94%;
-    
+
     /* MODIFY: Border radius */
     border-radius: 16px;
-    
+
     /* MODIFY: Shadow intensity */
     box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
   }
@@ -817,10 +817,10 @@
   .mpc-video-wrapper {
     /* MODIFY: Video width percentage */
     width: 93%;
-    
+
     /* MODIFY: Border radius */
     border-radius: 18px;
-    
+
     /* MODIFY: Shadow intensity */
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
   }
@@ -860,10 +860,10 @@
   .mpc-video-wrapper {
     /* MODIFY: Video width percentage */
     width: 92%;
-    
+
     /* MODIFY: Border radius */
     border-radius: 20px;
-    
+
     /* MODIFY: Shadow intensity */
     box-shadow: 0 14px 36px rgba(0, 0, 0, 0.55);
   }
