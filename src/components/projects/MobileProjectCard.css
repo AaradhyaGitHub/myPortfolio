@@ -110,7 +110,7 @@
   right: 12px;
   bottom: 12px;
   background: #000;
-  border-radius: 36px;
+  border-radius: 40px;
   z-index: 0;
 }
 
@@ -118,11 +118,11 @@
 .mpc-dynamic-island {
   position: absolute;
   top: 20px;
-  left: 49%;
+  left: 48%;
   transform: translateX(-50%);
-  width: 100px;
+  width: 90px;
   height: 16px;
-  background: #000; /*  #000 */
+  background: rgb(113, 113, 113);
   border-radius: 20px;
   z-index: 10;
   box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.8);
@@ -133,7 +133,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1px 24px 8px 24px;
+  padding: 8px 24px 8px 30px;
   color: #fff;
   font-size: 14px;
   font-weight: 600;
@@ -150,6 +150,7 @@
   display: flex;
   align-items: center;
   gap: 6px;
+  color: rgb(255, 0, 0);
 }
 
 .mpc-status-icons svg {
@@ -159,8 +160,10 @@
 /* Tab Navigation */
 .mpc-tab-nav {
   display: flex;
-  gap: 4px;
-  padding: 0 16px;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  padding: 0 20px;
   margin-bottom: 8px;
   position: relative;
   z-index: 5;
@@ -171,9 +174,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-  padding: 8px 8px;
-  background:  rgba(255, 255, 255, 0.08);/* rgba(255, 255, 255, 0.08);*/
+  gap: 1px;
+  padding: 8px 10px;
+  background: rgba(255, 255, 255, 0.08);
   border: none;
   border-radius: 10px;
   color: rgba(255, 255, 255, 0.6);
@@ -437,7 +440,7 @@
 
 /* Demo Button Container */
 .mpc-demo-button-container {
-  padding: 12px 16px;
+  padding: 1px 58px;
   position: relative;
   z-index: 5;
 }
@@ -448,12 +451,12 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 14px 20px;
+  padding: 8px 1px;
   background: var(--accent);
   border: none;
-  border-radius: 14px;
+  border-radius: 5px;
   color: #fff;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -474,7 +477,7 @@
 .mpc-home-indicator {
   width: 134px;
   height: 5px;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.444);
   border-radius: 3px;
   margin: 8px auto 6px;
   position: relative;
@@ -497,7 +500,7 @@
   align-items: center;
   gap: 4px;
   padding: 8px 5px;
-  background: rgba(255, 255, 255, 0);
+  background: rgba(187, 72, 72, 0);
   border: none;
   border-radius: 10px;
   color: var(--accent);
@@ -525,33 +528,63 @@
   width: 70px;
 }
 
-/* Video Container */
+/* ========== VIDEO SECTION (BACK OF PHONE) ========== */
+/* 
+  VIDEO CONTAINER - Main wrapper for the video player
+  MODIFY THESE to adjust video position and size on MOBILE (default)
+*/
 .mpc-video-container {
-  flex: 1;
+  flex: 1; /* Takes all available space between header and info section */
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 16px;
+  align-items: center; /* Centers video vertically */
+  justify-content: center; /* Centers video horizontally */
+  
+  /* MODIFY: Adjust padding to control video position and size
+     Format: padding: TOP RIGHT BOTTOM LEFT
+     - Increase TOP to push video down
+     - Increase BOTTOM to push video up
+     - Increase LEFT/RIGHT to add side margins */
+  padding: 16px 20px 12px 20px;
+  
   position: relative;
   z-index: 5;
 }
 
+/* 
+  VIDEO WRAPPER - Controls the actual video dimensions
+  MODIFY THESE for video appearance on MOBILE (default)
+*/
 .mpc-video-wrapper {
-  width: 100%;
-  aspect-ratio: 9/16;
+  /* MODIFY: Percentage of container width (90% = smaller video, 100% = full width) */
+  width: 95%;
+  
+  /* DO NOT CHANGE: Maintains Pixel 3 screen ratio (9:19.5) */
+  aspect-ratio: 9 / 19.5;
+  
+  /* Prevents video from overflowing container */
   max-height: 100%;
-  border-radius: 12px;
+  
+  /* MODIFY: Border radius for rounded corners (higher = more rounded)
+     Try: 16px, 20px, 24px */
+  border-radius: 14px;
+  
   overflow: hidden;
-  background: #000;
+  background: #000; /* Black background before video loads */
+  
+  /* MODIFY: Shadow intensity and spread
+     Format: horizontal vertical blur spread color */
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
+/* The actual iframe/video element */
 .mpc-video-iframe {
   width: 100%;
   height: 100%;
   border: none;
+  display: block;
 }
 
+/* Fallback message when no video URL provided */
 .mpc-no-video {
   width: 100%;
   height: 100%;
@@ -568,30 +601,47 @@
   font-size: 14px;
 }
 
-/* Video Info */
+/* 
+  VIDEO INFO SECTION - Title and subtitle below video
+  MODIFY THESE for text appearance on MOBILE (default)
+*/
 .mpc-video-info {
-  padding: 16px;
+  /* MODIFY: Spacing around text
+     Format: padding: TOP/BOTTOM LEFT/RIGHT */
+  padding: 14px 20px;
+  
   text-align: center;
   position: relative;
   z-index: 5;
 }
 
 .mpc-video-title {
+  /* MODIFY: Title font size (try 17px, 18px, 20px for larger) */
   font-size: 16px;
+  
   font-weight: 600;
   color: #fff;
+  
+  /* MODIFY: Bottom margin to adjust spacing before subtitle */
   margin: 0 0 4px 0;
 }
 
 .mpc-video-subtitle {
+  /* MODIFY: Subtitle font size (try 14px, 15px for larger) */
   font-size: 13px;
-  color: rgba(255, 255, 255, 0.5);
+  
+  /* MODIFY: Text opacity (0.5 = dimmer, 0.8 = brighter) */
+  color: rgba(255, 255, 255, 0.6);
+  
   margin: 0;
 }
 
-/* ========== RESPONSIVE ========== */
+/* ========== RESPONSIVE BREAKPOINTS ========== */
 
-/* Larger phones */
+/* 
+  LARGER PHONES (400px and up)
+  Slightly bigger than default mobile
+*/
 @media (min-width: 400px) {
   .mpc-phone-container {
     width: 300px;
@@ -606,9 +656,36 @@
     padding: 12px 10px;
     font-size: 13px;
   }
+
+  /* VIDEO ADJUSTMENTS - Larger phones */
+  .mpc-video-container {
+    /* MODIFY: Adjust video positioning for larger phones */
+    padding: 18px 22px 14px 22px;
+  }
+
+  .mpc-video-wrapper {
+    /* MODIFY: Video width percentage */
+    width: 95%;
+    
+    /* MODIFY: Border radius */
+    border-radius: 15px;
+  }
+
+  .mpc-video-title {
+    /* MODIFY: Title size for larger phones */
+    font-size: 17px;
+  }
+
+  .mpc-video-subtitle {
+    /* MODIFY: Subtitle size for larger phones */
+    font-size: 14px;
+  }
 }
 
-/* Tablets - phones side by side */
+/* 
+  TABLETS (768px and up)
+  Tablet-sized displays
+*/
 @media (min-width: 768px) {
   .mpc-card-wrapper {
     padding: var(--gap-lg);
@@ -626,11 +703,12 @@
 
   .mpc-dynamic-island {
     width: 110px;
-    height: 32px;
+    height: 22px;
+    background: rgb(113, 113, 113);
   }
 
   .mpc-status-bar {
-    padding: 58px 28px 10px 28px;
+    padding: 8px 28px 1px 28px;
     font-size: 15px;
   }
 
@@ -658,9 +736,44 @@
     padding: 16px 24px;
     font-size: 16px;
   }
+
+  /* VIDEO ADJUSTMENTS - Tablet */
+  .mpc-video-container {
+    /* MODIFY: Video positioning for tablets */
+    padding: 20px 24px 16px 24px;
+  }
+
+  .mpc-video-wrapper {
+    /* MODIFY: Video width percentage */
+    width: 94%;
+    
+    /* MODIFY: Border radius */
+    border-radius: 16px;
+    
+    /* MODIFY: Shadow intensity */
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+  }
+
+  .mpc-video-info {
+    /* MODIFY: Info section padding */
+    padding: 16px 24px;
+  }
+
+  .mpc-video-title {
+    /* MODIFY: Title size for tablets */
+    font-size: 18px;
+  }
+
+  .mpc-video-subtitle {
+    /* MODIFY: Subtitle size for tablets */
+    font-size: 14px;
+  }
 }
 
-/* Desktop - larger phones */
+/* 
+  DESKTOP (1024px and up)
+  Standard desktop displays
+*/
 @media (min-width: 1024px) {
   .mpc-phone-container {
     width: 340px;
@@ -694,12 +807,106 @@
   .mpc-app-tagline {
     font-size: 14px;
   }
+
+  /* VIDEO ADJUSTMENTS - Desktop */
+  .mpc-video-container {
+    /* MODIFY: Video positioning for desktop */
+    padding: 22px 26px 18px 26px;
+  }
+
+  .mpc-video-wrapper {
+    /* MODIFY: Video width percentage */
+    width: 93%;
+    
+    /* MODIFY: Border radius */
+    border-radius: 18px;
+    
+    /* MODIFY: Shadow intensity */
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+  }
+
+  .mpc-video-info {
+    /* MODIFY: Info section padding */
+    padding: 18px 26px;
+  }
+
+  .mpc-video-title {
+    /* MODIFY: Title size for desktop */
+    font-size: 19px;
+  }
+
+  .mpc-video-subtitle {
+    /* MODIFY: Subtitle size for desktop */
+    font-size: 15px;
+  }
 }
 
-/* Large desktop */
+/* 
+  LARGE DESKTOP (1200px and up)
+  Large desktop displays
+*/
 @media (min-width: 1200px) {
   .mpc-phone-container {
     width: 360px;
     height: 740px;
   }
+
+  /* VIDEO ADJUSTMENTS - Large Desktop */
+  .mpc-video-container {
+    /* MODIFY: Video positioning for large desktop */
+    padding: 24px 28px 20px 28px;
+  }
+
+  .mpc-video-wrapper {
+    /* MODIFY: Video width percentage */
+    width: 92%;
+    
+    /* MODIFY: Border radius */
+    border-radius: 20px;
+    
+    /* MODIFY: Shadow intensity */
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.55);
+  }
+
+  .mpc-video-info {
+    /* MODIFY: Info section padding */
+    padding: 20px 28px;
+  }
+
+  .mpc-video-title {
+    /* MODIFY: Title size for large desktop */
+    font-size: 20px;
+  }
+
+  .mpc-video-subtitle {
+    /* MODIFY: Subtitle size for large desktop */
+    font-size: 15px;
+  }
 }
+
+/* 
+  ========== QUICK REFERENCE GUIDE ==========
+  
+  To adjust video size on MOBILE (default):
+  - .mpc-video-container padding: Control space around video
+  - .mpc-video-wrapper width: Make video narrower/wider (90%, 95%, 100%)
+  - .mpc-video-wrapper border-radius: Rounder corners (12px, 16px, 20px)
+  
+  To adjust video size on TABLETS:
+  - Find @media (min-width: 768px)
+  - Modify .mpc-video-container padding
+  - Modify .mpc-video-wrapper width
+  
+  To adjust video size on DESKTOP:
+  - Find @media (min-width: 1024px)
+  - Modify .mpc-video-container padding
+  - Modify .mpc-video-wrapper width
+  
+  To adjust text below video:
+  - .mpc-video-title font-size: Bigger/smaller title
+  - .mpc-video-subtitle font-size: Bigger/smaller subtitle
+  - .mpc-video-info padding: Space around text
+  
+  IMPORTANT: Do NOT change aspect-ratio: 9 / 19.5
+  This maintains proper Pixel 3 video proportions
+*/
