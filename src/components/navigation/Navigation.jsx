@@ -8,7 +8,7 @@ const navLinks = [
   { to: "/", label: "Home", end: true },
   { to: "/projects", label: "Projects" },
   { to: "/about", label: "About" },
-  { to: "/photography/aerial", label: "Photography" }, // Changed to default to aerial
+  { to: "/photography/drone", label: "Photography" }, // Changed to default to aerial
   { to: "/contact", label: "Contact" }
 ];
 export default function MainNavigation() {

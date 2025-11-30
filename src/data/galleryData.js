@@ -1,6 +1,6 @@
 export const GALLERY = [
   {
-    genre: "aerial",
+    genre: "drone",
     photos: [
       "https://res.cloudinary.com/de3cxnkuw/image/upload/f_auto,q_auto/v1751960628/DJI_0028_zl2ko9.jpg",
       "https://res.cloudinary.com/de3cxnkuw/image/upload/f_auto,q_auto/v1751960623/DJI_0009_udjtko.jpg",

@@ -19,7 +19,7 @@ const shuffleArray = (array) => {
 };
 
 export default function Photography() {
-  const { genre = "aerial" } = useParams();
+  const { genre = "drone" } = useParams();
   const navigate = useNavigate();
   const [photos, setPhotos] = useState([]);
   const [displayedPhotos, setDisplayedPhotos] = useState([]);
@@ -200,8 +200,8 @@ export default function Photography() {
       <nav className="genre-nav">
         <div className="genre-nav-container">
           <button
-            onClick={() => handleGenreChange("aerial")}
-            className={`genre-btn ${genre === "aerial" ? "active" : ""}`}
+            onClick={() => handleGenreChange("drone")}
+            className={`genre-btn ${genre === "drone" ? "active" : ""}`}
           >
             DRONE
           </button>
