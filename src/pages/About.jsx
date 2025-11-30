@@ -193,7 +193,7 @@ export default function About() {
               <span className="outside-icon">●</span>
               <div className="outside-content">
                 <span className="outside-title">
-                  <Link to="/photography/aerial">Aerial Photography</Link>
+                  <Link to="/photography/drone">Aerial Photography</Link>
                 </span>
                 <span className="outside-detail">
                   Drones, cinematography, and creative tech
