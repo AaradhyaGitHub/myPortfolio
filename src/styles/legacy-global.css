@@ -3,31 +3,22 @@
 
 /* ========== CSS VARIABLES ========== */
 :root {
-  /* Dark theme (default) - Porsche inspired */
-  --bg-primary: #18181b;
-  --bg-secondary: #27272a;
-  --bg-card: #3f3f46;
-  --bg-elevated: #52525b;
+  /* Dark theme (default) */
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #111111;
+  --bg-card: #161616;
+  --bg-elevated: #1a1a1a;
 
-  --text-primary: #fafafa;
-  --text-secondary: #d4d4d8;
-  --text-muted: #a1a1aa;
+  --text-primary: #ffffff;
+  --text-secondary: #888888;
+  --text-muted: #555555;
 
-  --accent: #ef4444;
-  --accent-hover: #dc2626;
-  --accent-muted: rgba(239, 68, 68, 0.15);
-  --accent-subtle: rgba(239, 68, 68, 0.08);
+  --accent: #d73442;
+  --accent-hover: #e54553;
+  --accent-muted: rgba(215, 52, 66, 0.15);
 
-  --secondary-accent: #71717a;
-  --secondary-hover: #a1a1aa;
-  --secondary-muted: rgba(113, 113, 122, 0.2);
-
-  --tertiary-accent: #facc15;
-  --tertiary-muted: rgba(250, 204, 21, 0.1);
-
-  --border: #52525b;
-  --border-light: #71717a;
-  --border-accent: rgba(239, 68, 68, 0.4);
+  --border: #222222;
+  --border-light: #333333;
 
   /* Typography */
   --font-heading: "Playfair Display", Georgia, serif;
@@ -44,55 +35,42 @@
   --gap-xl: 64px;
 
   /* Border Radius */
-  --radius-sm: 6px;
-  --radius-md: 12px;
-  --radius-lg: 20px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
   --radius-full: 9999px;
 
   /* Transitions */
-  --transition-fast: 180ms cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-normal: 300ms cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+  --transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
 
   /* Shadows */
-  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.5);
-  --shadow-md: 0 8px 16px rgba(0, 0, 0, 0.6);
-  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.7);
-  --shadow-accent: 0 8px 24px rgba(239, 68, 68, 0.3);
-  --shadow-inset: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
 }
 
 [data-theme="light"] {
-  --bg-primary: #f4f4f5;
-  --bg-secondary: #e4e4e7;
-  --bg-card: #d4d4d8;
-  --bg-elevated: #a1a1aa;
+  --bg-primary: #fafafa;
+  --bg-secondary: #ffffff;
+  --bg-card: #ffffff;
+  --bg-elevated: #f5f5f5;
 
-  --text-primary: #18181b;
-  --text-secondary: #3f3f46;
-  --text-muted: #71717a;
+  --text-primary: #1a1a1a;
+  --text-secondary: #666666;
+  --text-muted: #999999;
 
-  --accent: #dc2626;
-  --accent-hover: #b91c1c;
-  --accent-muted: rgba(220, 38, 38, 0.12);
-  --accent-subtle: rgba(220, 38, 38, 0.06);
+  --accent: #c41e2a;
+  --accent-hover: #a81824;
+  --accent-muted: rgba(196, 30, 42, 0.1);
 
-  --secondary-accent: #52525b;
-  --secondary-hover: #3f3f46;
-  --secondary-muted: rgba(82, 82, 91, 0.15);
+  --border: #e5e5e5;
+  --border-light: #eeeeee;
 
-  --tertiary-accent: #eab308;
-  --tertiary-muted: rgba(234, 179, 8, 0.1);
-
-  --border: #a1a1aa;
-  --border-light: #d4d4d8;
-  --border-accent: rgba(220, 38, 38, 0.3);
-
-  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
-  --shadow-md: 0 8px 16px rgba(0, 0, 0, 0.15);
-  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.2);
-  --shadow-accent: 0 8px 24px rgba(220, 38, 38, 0.2);
-  --shadow-inset: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
 /* ========== RESET ========== */
@@ -162,11 +140,9 @@ h4 {
 
 h1 {
   font-size: clamp(2rem, 5vw, 3.5rem);
-  letter-spacing: -0.02em;
 }
 h2 {
   font-size: clamp(1.5rem, 4vw, 2.5rem);
-  letter-spacing: -0.01em;
 }
 h3 {
   font-size: clamp(1.2rem, 3vw, 1.5rem);
@@ -220,12 +196,11 @@ main {
 /* Focus styles for accessibility */
 :focus-visible {
   outline: 2px solid var(--accent);
-  outline-offset: 3px;
-  border-radius: var(--radius-sm);
+  outline-offset: 2px;
 }
 
 /* Selection */
 ::selection {
-  background: var(--accent);
-  color: #ffffff;
+  background: var(--accent-muted);
+  color: var(--text-primary);
 }
