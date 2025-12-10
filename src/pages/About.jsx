@@ -145,7 +145,7 @@ export default function About() {
               <p>
                 A{" "}
                 <a
-                  href="https://placeholder-demo-link.com"
+                  href="https://res.cloudinary.com/de3cxnkuw/video/upload/v1764224702/FlowBook-v4-demo_xjcbnw.mp4"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
