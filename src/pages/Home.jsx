@@ -17,7 +17,7 @@ import { Link } from "react-router-dom";
 import FeaturedProjects from "../components/featuredProducts/FeaturedProjects";
 import "./home.css";
 
-import resumePDF from "../assets/AaradhyaResume.pdf";
+import resumePDF from "../assets/AaradhyaResume2026.pdf";
 
 export default function Home() {
   const [typedText, setTypedText] = useState("");
